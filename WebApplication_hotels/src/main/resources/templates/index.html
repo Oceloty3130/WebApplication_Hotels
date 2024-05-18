@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Finder</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Welcome to Hotel Finder</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/api/hotels/nearby?lat=46.764654&lng=23.598674&radius=10">Nearby Hotels</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Find Hotels Near You</h2>
+        <form action="/api/hotels/nearby" method="get">
+            <div class="form-group">
+                <label for="lat">Latitude:</label>
+                <input type="text" id="lat" name="lat" required>
+            </div>
+            <div class="form-group">
+                <label for="lng">Longitude:</label>
+                <input type="text" id="lng" name="lng" required>
+            </div>
+            <div class="form-group">
+                <label for="radius">Radius (km):</label>
+                <input type="text" id="radius" name="radius" required>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+</main>
+</body>
+</html>
